@@ -2,6 +2,7 @@
 
 import React, {Component} from 'react';
 import {Platform, ListView, StyleSheet, StatusBar, Text, TouchableHighlight, View} from 'react-native';
+import PropTypes from 'prop-types';
 
 class WatchFace extends Component {
     static propTypes = {

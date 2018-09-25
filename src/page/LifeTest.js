@@ -11,6 +11,12 @@ export default class LifeTest extends React.Component{
         title: 'lifeTest',
     };
 
+    //一开始调用的方法
+    //es5: getDefaultProps
+    static defaultProps = {
+    };
+
+    //es5 getInitialState
     constructor(props) {
         super(props);
         console.log("constructor ====== 初始化 ======= init");
@@ -70,10 +76,6 @@ export default class LifeTest extends React.Component{
         console.log(this);
     }
 
-    _setNewNumber() {
-        this.setState({name: this.state.name+"W"})
-    }
-
     render(){
         console.log("render ======= 渲染");
         console.log("+++++++render : this");
@@ -90,4 +92,9 @@ export default class LifeTest extends React.Component{
 
         )
     }
+
+    _setNewNumber() {
+        this.setState({name: this.state.name+"W"})
+    }
+
 }

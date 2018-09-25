@@ -1,9 +1,16 @@
 import { AppRegistry } from 'react-native';
-import UserLogin from "./src/page/LoginPage/UserLogin"
-import PassWordReset from "./src/page/PassWordPage/PassWordReset"
-import App from './App'
-import Test from "./sLearning/page/Test";
+import App from './App'//自定义的导航栏
 
+//30-Days
+//import day1 from './sThrtyDay/Day1'
+
+//慕课的课程
+import Test1 from "./sLearning/_1_component/Test";
+import Test2 from "./sLearning/_2_props/Test"
+import Test3 from "./sLearning/_3_state/Test";
+import Test4 from "./sLearning/_4_useClass/Test";
+import Test5 from "./sLearning/_5_ref/Test";
+//忽略navigation的isMounted警告
 import { YellowBox } from 'react-native'; YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
-AppRegistry.registerComponent('zzzzz', () => Test);
+AppRegistry.registerComponent('zzzzz', () => Test5);
