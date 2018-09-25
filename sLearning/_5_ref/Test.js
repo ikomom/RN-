@@ -11,11 +11,13 @@ import {
 import PropTypes from 'prop-types';
 import RefCp from "./RefCp";
 
+let log = console.log.bind(console);
 export default class Test extends React.Component {
     // 构造
     constructor(props) {
         super(props);
         // 初始状态
+        log("=============constructor=============");
         this.state = {
             size: 10,
         };
