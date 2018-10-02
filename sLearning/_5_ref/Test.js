@@ -21,6 +21,13 @@ export default class Test extends React.Component {
         this.state = {
             size: 10,
         };
+
+        //三个this都指向Test（Test调用constructor）
+        this._onAppEvent = this._onAppEvent.bind(this);
+    }
+
+    _onAppEvent = ()=>{
+        log("箭头函数返回新的函数的引用")
     }
 
     render() {

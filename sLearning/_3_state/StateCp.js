@@ -38,7 +38,7 @@ export default class StateCp extends React.Component {
                     onPress={() => this.setState({
                         size: this.state.size + 10,
                     })}>吹气</Text>
-                <Image source={require('./ballon.jpg')} style={{width: this.state.size, height: this.state.size}}/>
+                <Image source={require('../_7_image/ballon.jpg')} style={{width: this.state.size, height: this.state.size}}/>
                 <Text
                     style={styles.text}
                     onPress={() => this.setState({
