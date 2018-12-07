@@ -17,4 +17,4 @@ import Test7 from "./sLearning/_7_image/Test";
 //忽略navigation的isMounted警告
 import { YellowBox } from 'react-native'; YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
-AppRegistry.registerComponent('zzzzz', () => Test7);
+AppRegistry.registerComponent('zzzzz', () => App);
