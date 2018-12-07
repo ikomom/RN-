@@ -1,23 +1,61 @@
 import React, {Component} from 'react';
-import {SectionList, StyleSheet, Text, View} from 'react-native';
-import Button from "./Button";
+import {SectionList, StyleSheet, Text, View, Button, TouchableHighlight} from 'react-native';
+import BtnWithSection from "./BtnWithSection";
+let textColor = {color: 'black'};
+let textWhite = {color: 'green'};
 
 export default class MySectionList extends Component {
+    // 构造
+    constructor(props) {
+        super(props);
+        this.item = 4;
+        // 初始状态
+        this.state = {
+            colorChoose: false,
+            data: [
+                {title: 'D', data: ['Devin']},
+                {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
+                {title: "Title1", data: ["item1", "item2"]},
+                {title: "Title2", data: ["item3", "item4"]},
+                {title: "Title3", data: ["item5", "item6"]},
+            ]
+        };
+    }
+
+    _renderItem = ({item}) => {
+        console.log('_renderItem', item, this.state.data)
+        return (
+            <TouchableHighlight
+                onPress={() => {
+                   this.setState({colorChoose: !this.state.colorChoose})
+                }}
+            >
+                <Text style={this.state.colorChoose? textColor : textWhite}>{item}</Text>
+            </TouchableHighlight>
+
+        )
+    };
+
+    _callBack = () => {
+        this.setState({
+            data: [{title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']}]
+        })
+    };
+
     render() {
         return (
             <View style={styles.container}>
-                <SectionList
-                    sections={[
-                        {title: 'D', data: ['Devin']},
-                        {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
-                        {title: "Title1", data: ["item1", "item2"]},
-                        {title: "Title2", data: ["item3", "item4"]},
-                        {title: "Title3", data: ["item5", "item6"]},
-                    ]}
-                    renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
-                    renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
-                    keyExtractor={(item, index) => index} //每行生成一个不重复的key值
-                />
+                <Button title={'添加state'} onPress={this._callBack}/>
+                {/*<SectionList*/}
+                    {/*sections={this.state.data}*/}
+                    {/*renderItem={this._renderItem}*/}
+                    {/*renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}*/}
+                    {/*keyExtractor={(item, index) => index} //每行生成一个不重复的key值*/}
+                {/*/>*/}
+                <BtnWithSection sections={this.state.data}
+                                renderItem={this._renderItem}
+                                renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
+                                callBack={this._callBack}/>
             </View>
         )
     }
