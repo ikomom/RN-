@@ -2,7 +2,7 @@ import { AppRegistry } from 'react-native';
 import App from './App'//自定义的导航栏
 
 //30-Days
-//import day1 from './sThrtyDay/Day1'
+import day1 from './sThrtyDay/Day1'
 
 //慕课的课程
 import Test1 from "./sLearning/_1_component/Test";
@@ -17,4 +17,4 @@ import Test7 from "./sLearning/_7_image/Test";
 //忽略navigation的isMounted警告
 import { YellowBox } from 'react-native'; YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
-AppRegistry.registerComponent('zzzzz', () => App);
+AppRegistry.registerComponent('zzzzz', () => day1);
